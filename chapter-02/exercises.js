@@ -26,8 +26,12 @@ LOGS =>
 
 */
 
-function triangles() {
-  
+function triangles(height) {
+  let delta = '#';
+for (let i = height; i > 0; i--) {
+  console.log(delta);
+  delta += '#';
+}
 }
 
 
@@ -48,7 +52,17 @@ on the number:
 */
 
 function fizzBuzz(start, end) {
-  
+  for (let i = start; i <= end; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log('fizzbuzz');
+    } else if (i % 3 === 0) {
+      console.log('fizz');
+    } else if (i % 5 === 0) {
+      console.log('buzz');
+    } else {
+      console.log(i);
+    }
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -82,7 +96,11 @@ LOGS =>
 */
 
 function drawChessboard(x) {
-
+//init board matrix
+let board = [[' ']];
+//edge board size 1 already solved
+if (x === 1) { return board[0][0]; }
+//nested loop to edit board to correct size
 
 }
 

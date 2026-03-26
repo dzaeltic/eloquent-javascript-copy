@@ -96,14 +96,36 @@ LOGS =>
 */
 
 function drawChessboard(x) {
-//init board matrix
-let board = [[' ']];
-//edge board size 1 already solved
-if (x === 1) { return board[0][0]; }
-//nested loop to edit board to correct size
-
-}
-
+  //init board matrix
+  let board = [' '];
+  //edge board size 1 already solved
+  if (x === 1) { console.log(board[0][0]); }
+  //nested loop to edit board to correct size
+    for (let i = 0; i < x; i++) {
+      if (i > 0 && i % 2 !== 0) {
+        board.push('#');
+      }
+      if (i > 0 && i % 2 === 0) {
+        board.push(' ');
+      }
+        for (let j = 1; j < x; j++) {
+          if (i % 2 !== 0 && j % 2 !== 0) {
+            board[i] += ' ';
+          }
+          if (i % 2 !== 0 && j % 2 === 0) {
+            board[i] += '#';
+          }
+          if (i % 2 === 0 && j % 2 === 0) {
+            board[i] += ' ';
+          }
+          if (i % 2 === 0 && j % 2 !== 0) {
+            board[i] += '#';
+          }
+        }
+    }
+    // board.push('');
+    return board.join('\n');
+  }
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
